@@ -29,7 +29,11 @@ public class Main {
                     break;
                 }
                 case (4):{
-                    Main.fours_assigment();
+                    System.out.print("Enter a :");
+                    int a = in.nextInt();
+                    System.out.print("Enter b :");
+                    int b = in.nextInt();
+                    System.out.print(Main.fours_assigment(a,b)+"\n");
                     break;
                 }
                 case (5):{
@@ -109,16 +113,35 @@ public class Main {
         }
         System.out.print("Amount bit max long : " + count + "\n");
     }
-    public static void fours_assigment (){
-        Scanner in_fours = new Scanner(System.in);
+    public static int  fours_assigment (int a,int b) {
+        /*Scanner in_fours = new Scanner(System.in);
         System.out.print("Enter a : ");
         int a = in_fours.nextInt();
         System.out.print("Enter b : ");
         int b = in_fours.nextInt();
-        while (b != 0){
+        while (b != 0) {
             b = a % (a = b);
         }
         System.out.print("nod = " + (a < 0 ? -a : a) + "\n");
+        */
+        if (a == 0 || b == 0)
+            return a|b;
+        if ((a & 1) == 0 && (b & 1) == 0) {
+            return 2 * fours_assigment(a >> 1, b >> 1);
+        }
+        if ((a & 1) == 0) {
+            return fours_assigment(a >> 1, b);
+        }
+        if ((b & 1) == 0) {
+            return fours_assigment(a, b >> 1);
+        }
+        if (a > b) {
+            return fours_assigment(a - b, b);
+        }
+        if (a < b) {
+            return fours_assigment(b - a, a);
+        }
+        return a;
     }
     public static void fifs_assigment (){
         Scanner in_fifs = new Scanner(System.in);
