@@ -56,7 +56,6 @@ public class Main {
         System.out.print("Enter binaric number : ");
         int number_int = in_first.nextByte(2);
         System.out.print( "Your number in Decimal : " + number_int + "\n" );
-        //in_first.close();
        /* byte *//* String binar = //in_first.nextLine;
        int decimal = 0;
         for (int i = 0; i < binar.length(); i++) {
@@ -90,21 +89,21 @@ public class Main {
         short shNumber = Short.MAX_VALUE;
         long lNumber = Long.MAX_VALUE;
         count = 1;
-        while (bNumber != 0) {
+        while (bNumber > 0) {
             bNumber = (byte) (bNumber >> 1);
             count++;
         }
         System.out.print("Amount bit max byte : " + count + "\n");
 
         count = 1;
-        while (shNumber != 0) {
+        while (shNumber > 0) {
             shNumber = (short) (shNumber >> 1);
             count++;
         }
         System.out.print("Amount bit max byte : " + count + "\n");
 
         count = 1;
-        while (lNumber != 0) {
+        while (lNumber > 0) {
             lNumber = (lNumber >> 1);
             count++;
         }
